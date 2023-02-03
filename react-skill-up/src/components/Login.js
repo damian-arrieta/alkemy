@@ -1,6 +1,10 @@
+//Libraries
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
 import { useNavigate } from 'react-router-dom';
+
+//Styles
+import '../css/bootstrap.min.css';
 
 export default function Login() {
 

@@ -1,5 +1,9 @@
+//Libraries
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+//Styles
+import '../css/bootstrap.min.css';
 
 export default function Listado() {
 

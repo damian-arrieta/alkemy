@@ -1,14 +1,18 @@
+//Libraries
 import React from 'react';
+
+//Styles
+import '../css/bootstrap.min.css';
 
 export default function Footer() {
   return (
     <footer>
         <nav>
-            <li>
-                <ul>
+            <ul>
+                <li>
                     <a href="https://github.com/damian-arrieta" rel='noopener noreferrer'>GitHub</a>
-                </ul>
-            </li>
+                </li>
+            </ul>
         </nav>
         <p>Copyright Alkemy Challenge</p>
     </footer>
