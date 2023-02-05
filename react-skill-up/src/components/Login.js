@@ -1,7 +1,7 @@
 //Libraries
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 //Styles
 import '../css/bootstrap.min.css';
@@ -42,8 +42,12 @@ export default function Login() {
             })
     }
 
+    let token = localStorage.getItem('token');
+
   return (
     <>
+        { token && <Navigate to='/listado' /> }
+
         <h2>Formulario de login</h2>
         <form onSubmit={submitHandler}>
             <label>
