@@ -1,6 +1,7 @@
 //Libraries
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import axios from 'axios';
 
 //Styles
 import '../css/bootstrap.min.css';
@@ -8,6 +9,19 @@ import '../css/bootstrap.min.css';
 export default function Listado() {
 
     let token = localStorage.getItem('token');
+
+    const [ moviesList, setMoviesList ] = useState([])
+
+    useEffect(() => {
+        const endPoint = 'https://api.themoviedb.org/3/discover/movie?api_key=6d01a6cc72de7f4787d584b8986e2172&language=es-ES&page=1';
+        axios.get(endPoint)
+            .then(response => {
+                const apiData = response.data;
+                setMoviesList(apiData.results);
+            })
+    }, [setMoviesList]);
+
+    console.log(moviesList);
 
     return (
         <>
