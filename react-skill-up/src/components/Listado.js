@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
+import swAlert from '@sweetalert/with-react';
 
 //Styles
 import '../css/bootstrap.min.css';
@@ -18,6 +19,9 @@ export default function Listado() {
             .then(response => {
                 const apiData = response.data;
                 setMoviesList(apiData.results);
+            })
+            .catch(error => {
+                swAlert(<h2>Hubo errores. Intenta mas tarde</h2>);
             })
     }, [setMoviesList]);
 
