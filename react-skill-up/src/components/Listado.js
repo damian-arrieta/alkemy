@@ -9,7 +9,7 @@ import '../css/bootstrap.min.css';
 
 export default function Listado() {
 
-    let token = localStorage.getItem('token');
+    let token = sessionStorage.getItem('token');
 
     const [ moviesList, setMoviesList ] = useState([])
 

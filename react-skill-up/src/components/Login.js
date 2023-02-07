@@ -37,12 +37,12 @@ export default function Login() {
             .then(res => {
                 swAlert(<h3>Perfecto, ingresaste correctamente</h3>);
                 const token = res.data.token;
-                localStorage.setItem('token', token);
+                sessionStorage.setItem('token', token);
                 navigate('/Listado');
             })
     }
 
-    let token = localStorage.getItem('token');
+    let token = sessionStorage.getItem('token');
 
   return (
     <>
