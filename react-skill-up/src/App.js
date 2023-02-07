@@ -6,6 +6,7 @@ import Listado from "./components/Listado";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from "./components/Login";
+import Detalle from "./components/Detalle";
 
 //Styles
 import './css/bootstrap.min.css'
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/Listado' element={<Listado />} />
+          <Route path='/Detalle' element={<Detalle />} />
         </Routes>
       </div>
         
