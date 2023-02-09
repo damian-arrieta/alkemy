@@ -5,6 +5,9 @@ export default function Detalle() {
 
     let token = sessionStorage.getItem('token');
 
+    let query = new URLSearchParams(window.location.search);
+    let movieID = query.get('movieID');
+
     return (
     <>
         { !token && <Navigate to='/' /> }
