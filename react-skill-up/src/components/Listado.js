@@ -4,9 +4,6 @@ import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
 
-//Styles
-import '../css/bootstrap.min.css';
-
 export default function Listado() {
 
     let token = sessionStorage.getItem('token');
@@ -24,8 +21,6 @@ export default function Listado() {
                 swAlert(<h2>Hubo errores. Intenta mas tarde</h2>);
             })
     }, [setMoviesList]);
-
-    console.log(moviesList);
 
     return (
         <>
