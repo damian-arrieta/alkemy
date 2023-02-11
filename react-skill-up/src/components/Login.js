@@ -45,20 +45,28 @@ export default function Login() {
     <>
         { token && <Navigate to='/listado' /> }
 
-        <h2>Formulario de login</h2>
-        <form onSubmit={submitHandler}>
-            <label>
-                <span>Correo electronico:</span> <br />
-                <input type="email" name="email" />
-            </label>
-            <br />
-            <label>
-                <span>Contraseña:</span> <br />
-                <input type="password" name="password" />
-            </label>
-            <br />
-            <button type="submit">Ingresar</button>
-        </form>
+        <div className="row">
+            <div className="col-6 offset-3">
+                <h2>Formulario de login</h2>
+                <form onSubmit={submitHandler}>
+                    <label className='form-label d-block mt-2'>
+                        <span>Correo Electrónico:</span>
+                        <br />
+                        <span>challenge@alkemy.org</span>
+                        <br />
+                        <input className='form-control' type="text" name='email' />
+                    </label>
+                    <label className='form-label d-block mt-2'>
+                        <span>Contraseña:</span>
+                        <br />
+                        <span>react</span>
+                        <br />
+                        <input className='form-control' type="password" name='password' />
+                    </label>
+                    <button className='btn btn-info mt-2' type='submit'>Ingresar</button>
+                </form>
+            </div>
+        </div>
     </>
   )
 }

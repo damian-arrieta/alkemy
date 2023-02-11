@@ -8,9 +8,6 @@ import Footer from './components/Footer';
 import Login from "./components/Login";
 import Detalle from "./components/Detalle";
 
-//Styles
-import './css/bootstrap.min.css'
-
 function App() {
   return (
     <>
