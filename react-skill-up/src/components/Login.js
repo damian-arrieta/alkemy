@@ -52,17 +52,15 @@ export default function Login() {
                     <label className='form-label d-block mt-2'>
                         <span>Correo Electrónico:</span>
                         <br />
-                        <span>challenge@alkemy.org</span>
-                        <br />
                         <input className='form-control' type="text" name='email' />
                     </label>
                     <label className='form-label d-block mt-2'>
                         <span>Contraseña:</span>
                         <br />
-                        <span>react</span>
-                        <br />
                         <input className='form-control' type="password" name='password' />
                     </label>
+                    <span>Email: challenge@alkemy.org / Password: react</span>
+                    <br />
                     <button className='btn btn-info mt-2' type='submit'>Ingresar</button>
                 </form>
             </div>

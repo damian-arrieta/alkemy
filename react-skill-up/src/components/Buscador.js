@@ -17,7 +17,7 @@ export default function Buscador() {
             <input className='form-control' type="text" name="keyword" placeholder='Buscar' />
         </label>
         <button className='btn btn-light' type="submit">
-            <i class="bi bi-search"></i>
+            <i className="bi bi-search"></i>
         </button>
     </form>
   )
