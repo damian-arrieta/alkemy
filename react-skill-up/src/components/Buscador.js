@@ -5,8 +5,8 @@ export default function Buscador() {
 
     const submitHandler = e => {
         e.preventDefault();
-        const keyword = e.currentTarget.keyword.value;
-        if (keyword.length === 0) {
+        const keyword = e.currentTarget.keyword.value.trim();
+        if (keyword.length < 4) {
             swAlert(<h5>Tienes que escribir una palabra clave</h5>)
         }
     }

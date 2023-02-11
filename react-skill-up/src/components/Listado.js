@@ -35,7 +35,7 @@ export default function Listado() {
                                 <div className="card-body">
                                     <h5 className="card-title">{ oneMovie.title.substring(0, 30) }...</h5>
                                     <p className="card-text">{ oneMovie.overview.substring(0, 100) }...</p>
-                                    <Link to={`/Detalle?movieID=${oneMovie.id}`} className="btn btn-primary">Ver datalle</Link>
+                                    <Link to={`/Detalle?movieID=${oneMovie.id}`} className="btn btn-info">Ver detalle</Link>
                                 </div>
                             </div>
                         </div>
