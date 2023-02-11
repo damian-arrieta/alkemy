@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="fixed-bottom text-center">
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <div className='container d-flex justify-content-center flex-column'>
           <ul className='navbar-nav'>
