@@ -11,7 +11,7 @@ export default function Header() {
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
             <div className='container'>
                 <Link className='navbar-brand mx-5' to='/'>
-                    <i class="bi bi-film"> Movi-es</i>
+                    <i className="bi bi-film"> Movi-es</i>
                 </Link>
                 <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle Navigation'>
                     <span className='navbar-toggler-icon'></span>

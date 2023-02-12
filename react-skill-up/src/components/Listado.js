@@ -4,7 +4,7 @@ import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
 
-export default function Listado() {
+export default function Listado(props) {
 
     let token = sessionStorage.getItem('token');
 
@@ -32,6 +32,9 @@ export default function Listado() {
                         <div className="col-3" key={idx}>
                             <div className="card my-4">
                                 <img src={`https://image.tmdb.org/t/p/w500${oneMovie.poster_path}`} className="card-img-top" alt={oneMovie.title} />
+                                <button className='favourite-btn'>
+                                    <i className="bi bi-star-fill" onClick={props.addOrRemoveFromFavs} data-movie-id={oneMovie.id}></i>
+                                </button>
                                 <div className="card-body">
                                     <h5 className="card-title">{ oneMovie.title.substring(0, 30) }...</h5>
                                     <p className="card-text">{ oneMovie.overview.substring(0, 100) }...</p>

@@ -7,6 +7,7 @@ import { createRoot } from 'react-dom/client';
 //Styles
 import './css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import './css/app.css'
 
 const container = document.getElementById('root');
 const root = createRoot(container);
