@@ -21,6 +21,9 @@ export default function Header() {
                         <li className='nav-item'>
                             <Link className='nav-link' to='/Listado'>Películas</Link>
                         </li>
+                        <li className='nav-item'>
+                            <Link className='nav-link' to='/Favoritos'>Favoritos</Link>
+                        </li>
                     </ul>
                 </div>
             </div>

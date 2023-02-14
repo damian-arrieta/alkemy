@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Login from "./components/Login";
 import Detalle from "./components/Detalle";
 import Resultados from './components/Resultados';
+import Favoritos from './components/Favoritos';
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
           <Route path='/Listado' element={<Listado addOrRemoveFromFavs={ addOrRemoveFromFavs } />} />
           <Route path='/Detalle' element={<Detalle />} />
           <Route path='/Resultados' element={<Resultados />} />
+          <Route path='/Favoritos' element={<Favoritos />} />
         </Routes>
       </div>
       
