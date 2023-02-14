@@ -11,17 +11,18 @@ import Resultados from './components/Resultados';
 
 function App() {
 
-  const favsMovies = localStorage.getItem('favs');
-
-  let tempMoviesInFavs;
-
-  if (favsMovies === null) {
-    tempMoviesInFavs = [];
-  } else {
-    tempMoviesInFavs = JSON.parse(favsMovies);
-  }
-
   const addOrRemoveFromFavs = e => {
+
+    const favsMovies = localStorage.getItem('favs');
+
+    let tempMoviesInFavs;
+
+    if (favsMovies === null) {
+      tempMoviesInFavs = [];
+    } else {
+      tempMoviesInFavs = JSON.parse(favsMovies);
+    }
+
     const btn = e.currentTarget;
     let parent = btn.parentElement;
     parent = parent.parentElement;
