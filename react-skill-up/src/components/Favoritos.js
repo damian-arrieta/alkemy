@@ -1,25 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, Navigate } from 'react-router-dom';
 
-export default function Favoritos() {
+export default function Favoritos(props) {
 
-    const [ favourites, setFavourites ] = useState([]);
-
-    useEffect(() => {
-        const favsInLocal = localStorage.getItem('favs');
-        if (favsInLocal !== null) {
-            const favsArray = JSON.parse(favsInLocal);
-            setFavourites(favsArray);
-        }
-    }, [])
+    let token = sessionStorage.getItem('token');
 
   return (
+    <>
+    { !token && <Navigate to='/' /> }
     <div className="row">
-    { favourites.map((oneMovie, idx) => {
+    { !props.favourites.length && <div className='col-12 text-danger'>No tenés nada en favoritos</div>}
+    { props.favourites.map((oneMovie, idx) => {
         return (
             <div className="col-3" key={idx}>
                 <div className="card my-4">
                     <img src={oneMovie.imgURL} className="card-img-top" alt={oneMovie.title} />
+                    <button className='favourite-btn'>
+                        <i className="bi bi-star-fill" onClick={props.addOrRemoveFromFavs} data-movie-id={oneMovie.id}></i>
+                    </button>
                     <div className="card-body">
                         <h5 className="card-title">{ oneMovie.title.substring(0, 30) }...</h5>
                         <p className="card-text">{ oneMovie.overview.substring(0, 100) }...</p>
@@ -29,7 +27,7 @@ export default function Favoritos() {
             </div>
         )
     }) }
-
-</div>
+    </div>
+    </>
   )
 }

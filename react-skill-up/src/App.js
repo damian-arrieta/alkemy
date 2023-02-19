@@ -1,5 +1,6 @@
 //Libraries
 import { Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
 //Components
 import Listado from "./components/Listado";
@@ -11,6 +12,16 @@ import Resultados from './components/Resultados';
 import Favoritos from './components/Favoritos';
 
 function App() {
+
+  const [ favourites, setFavourites ] = useState([]);
+
+  useEffect(() => {
+      const favsInLocal = localStorage.getItem('favs');
+      if (favsInLocal !== null) {
+          const favsArray = JSON.parse(favsInLocal);
+          setFavourites(favsArray);
+      }
+  }, [])
 
   const addOrRemoveFromFavs = e => {
 
@@ -39,17 +50,19 @@ function App() {
     if (!movieIsInArray) {
       tempMoviesInFavs.push(movieData);
       localStorage.setItem('favs', JSON.stringify(tempMoviesInFavs));
+      setFavourites(tempMoviesInFavs);
     } else {
       let moviesLeft = tempMoviesInFavs.filter(oneMovie => {
         return oneMovie.id !== movieData.id
       });
-      localStorage.setItem('favs', JSON.stringify(tempMoviesInFavs));
+      localStorage.setItem('favs', JSON.stringify(moviesLeft));
+      setFavourites(tempMoviesInFavs);
     }
   }
 
   return (
     <>
-      <Header />
+      <Header favourites={ favourites } />
 
       <div className='container mt-3 mb-5'>
         <Routes>
@@ -57,7 +70,7 @@ function App() {
           <Route path='/Listado' element={<Listado addOrRemoveFromFavs={ addOrRemoveFromFavs } />} />
           <Route path='/Detalle' element={<Detalle />} />
           <Route path='/Resultados' element={<Resultados />} />
-          <Route path='/Favoritos' element={<Favoritos />} />
+          <Route path='/Favoritos' element={<Favoritos favourites={ favourites } addOrRemoveFromFavs={ addOrRemoveFromFavs } />} />
         </Routes>
       </div>
       
